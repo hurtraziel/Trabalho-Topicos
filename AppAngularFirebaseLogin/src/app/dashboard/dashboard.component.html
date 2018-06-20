@@ -4,28 +4,21 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Novo">
-          <a class="nav-link" href="Novo">
-        <span class="nav-link-text">
-            <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Novo
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Trabalho</a>
-                  <a class="dropdown-item" href="#">Tarefa</a>
-                </div>
-              </div>
-
-        </span></a></li>
-      </ul>
+    <div class="navbar-collapse">
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Novo
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTrabalho">Trabalho</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalTarefa">Tarefa</a>
+            </div>
+          </div>
+      
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          Logout</a>
-        </li>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+              Logout
+            </button>
       </ul>
     </div>
   </nav>
@@ -83,39 +76,102 @@
               <div class="mr-5">Trabalhos não Terminados</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">Ver Detalhes</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
+              <span class="float-left">Ver Detalhes
               </span>
+
             </a>
           </div>
         </div>
       </div>
-      <div class="row"></div>
 </div>
-    <footer class="sticky-footer">
-      <div class="container">
-      </div>
-    </footer>
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Logout do sistema?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Tem certeza que deseja sair?</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="login">Sair</a>
-          </div>
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Encerrar Sessão</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Deseja realmente sair?  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login">Sair</a>
         </div>
       </div>
     </div>
+  </div>
+  <div class="modal fade" id="modalTrabalho" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Cadastrar novo Trabalho</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body mx-3">
+                  <div class="md-form mb-1">
+                      <i class="fa fa-user prefix grey-text"></i>
+                      <input type="text" id="orangeForm-name" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="orangeForm-name">Nome</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="wrong" data-success="right">Data de início</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="wrong" data-success="right">Data de término</label>
+                  </div>
+  
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-deep-orange">Enviar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="modalTarefa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Cadastrar nova Tarefa</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body mx-3">
+                  <div class="md-form mb-1">
+                      <i class="fa fa-user prefix grey-text"></i>
+                      <input type="text" id="orangeForm-name" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="orangeForm-name">Nome da Tarefa</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="wrong" data-success="right">Data de início</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="date" id="orangeForm-date" class="form-control validate">
+                      <label data-error="wrong" data-success="right">Data de término</label>
+                  </div>
+                  <div class="md-form mb-1">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <textarea rows="5" cols="20" id="orangeForm-date" class="form-control validate"></textarea>
+                      <label data-error="wrong" data-success="right">Descrição</label>
+                  </div>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-deep-orange">Enviar</button>
+              </div>
+          </div>
+      </div>
+  </div>
   </div>
 </body>
