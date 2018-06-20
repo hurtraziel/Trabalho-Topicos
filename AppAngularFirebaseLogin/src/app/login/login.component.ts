@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from "../services/login-service";
-import { Router } from "@angular/router";
+import { LoginService } from '../services/login-service';
+import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
 
 import * as firebase from 'firebase/app';

@@ -12,7 +12,6 @@
           <img src="assets/imagens/logo.png" width="150px" class="user-avatar" />
           <h4>Workflow - Sistema de Tarefas</h4>
           <div class="input-field col s11 m8 l4 offset-l4 offset-m2">
-            <i class="material-icons prefix">email</i>
             <input type="email" #user class="validate">
             <label for="email" data-error="Digite um e-mail válido">Email</label>
           </div>
@@ -21,7 +20,6 @@
           <br/>
           <br/>
           <div class="input-field col s11 m8 l4 offset-l4 offset-m2">
-            <i class="material-icons prefix">lock</i>
             <input type="password" #password class="form-control" required (keydown.enter)="logOn(user.value,password.value)" [type]="hide ? 'password' : 'text'"> <!-- deve-se instanciar a variavel "hide" no modulo ts -->
             <div class="mostrar-senha">
               <i class="material-icons right tooltipped " data-position="center" data-delay="50" data-tooltip="Mostrar senha" (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</i>
