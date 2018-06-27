@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCFEAdD1jZlcdNTy7WWm8GjWnFCdccEOUo",
+    authDomain: "workflow-irwin.firebaseapp.com",
+    databaseURL: "https://workflow-irwin.firebaseio.com",
+    projectId: "workflow-irwin",
+    storageBucket: "workflow-irwin.appspot.com",
+    messagingSenderId: "1014981411125"
+  }
 };
